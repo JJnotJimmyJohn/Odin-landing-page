@@ -1,0 +1,282 @@
+
+/* How to let content extend the whole height of the screen?
+I used body height: 100vh
+*/
+
+
+body {
+    /* width: 100px; */
+    font-family: 'Roboto', sans-serif;
+    /* height: 100vh; */
+    margin: 0px;
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    
+}
+
+
+div.wrapper > * {
+    /* border:solid red; */
+}
+
+
+/* how to let all content shrink to the middle of the page but background still extend the whole screen?
+I created a div to include all content. Because I want it to have a max width. And I can't do that to body -> didn't work
+Do I have to do padding-left: 100px to each individual div like header-left, cards???
+
+I added a wrapper to all individual section, then set the flex items inside to 0.8
+*/
+
+/* adjusting section height with flex=0.1, 0.8 etc. */
+.wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.wrapper-header {
+    flex: 0.1;
+}
+
+
+.wrapper-banner {
+    flex:0.8;
+    padding-top: 48px;
+    padding-bottom: 48px;
+}
+
+
+.wrapper-cards {
+    flex: 1;
+
+}
+
+.wrapper-quote {
+    background-color: #E5E7EB;
+    flex: 1;
+}
+
+.wrapper-signup {
+    flex: 0.8;
+}
+
+.wrapper-footer {
+    background-color: #1F2937;
+    flex: 0.2;
+}
+
+
+.wrapper-header,.wrapper-banner {
+    background-color: #1F2937;
+}
+
+
+
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    /* flex: 0.8 will center the content; */
+    flex: 0.8;
+    /* max-width makes sure it doesn't expand too wide when screen is super wide */
+    max-width: 1024px;
+    /* min-width makes sure it doesn't shrink too narrow 
+    it didn't work apparently*/
+    min-width: 500px;
+    min-height: 70px;
+    align-items: center;
+}
+
+.header-left {
+    font-size: 24px;
+    font-weight: bold;
+    color: #F9FAF8;
+}
+
+.header-right {
+    display: flex;
+    gap: 10px;
+    color: #E5E7EB;
+}
+
+.banner {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex: 0.8;
+    max-width: 1024px;
+    min-width: 500px;
+}
+
+.banner-left {
+    flex:1;
+    display: flex;
+    gap:10px;
+    flex-direction: column;
+}
+
+.banner-right {
+    flex:1;
+    text-align: center;
+}
+
+#banner-image {
+    width: 300px;
+    height: 150px;
+}
+
+
+
+.banner-left div:nth-child(1) {
+    font-size: 48px;
+    /* font-weight: bold; */
+    font-weight: 1000;
+    color: #F9FAF8;
+}
+
+.banner-left div:nth-child(2) {
+    font-size: 18px;
+    color: #E5E7EB;
+}
+
+#banner-signup-button {
+    color: white;
+    border: 0;
+    background-color: #3882F6;
+    border-radius: 4px;
+    padding: 5px 20px;
+    width: 100px;
+    height:30px;
+}
+
+.banner-right {
+    /* flex:1; */
+    /* text-align: center; */
+}
+
+.cards {
+    flex: 0.8;
+    max-width: 1024px;
+    min-width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    gap: 40px;
+    padding:40px;
+}
+
+.cards > div:nth-child(1) {
+    align-self: center;
+    font-size: 36px;
+    font-weight: bolder;
+}
+
+.cards-cards {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: baseline;
+    flex-wrap: wrap;
+    /* outline: solid blue; */
+}
+
+.card {
+    /* outline: solid red; */
+    flex:1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-image {
+    display: block;
+    max-width:400px;
+    max-height:100px;
+    width: auto;
+    height: auto;
+}
+
+
+.quote {
+    flex: 0.8;
+    max-width: 1024px;
+    min-width: 500px;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px
+}
+
+.quote-text {
+    font-size: 36px;
+    font-style: italic;
+    color: #1F2937;
+}
+
+.quote-person {
+    align-self: flex-end;
+    font-weight: bold;
+}
+
+.wrapper-signup {
+    /* padding:40px */
+}
+
+/* How to I make the sign up div smaller section? 
+I used margin */
+.signup {
+    flex: 0.8;
+    margin: 70px 50px;
+    max-width: 1024px;
+    min-width: 500px;
+    min-height: 100px;
+    background-color: #3882F6;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px
+}
+
+.signup-title {
+    color: #F9FAF8;
+    font-weight: 1000;
+    font-size: 24px;
+}
+
+.signup-text {
+    color: #E5E7EB;
+    font-size: 18px;
+    font-weight: 1000;
+}
+
+.wrapper-footer {
+    background-color: #1F2937;
+    flex: 0.2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100px;
+}
+
+.footer {
+    max-width: 1024px;
+    min-width: 500px;
+    color:#E5E7EB;
+    text-align: center;
+}
+
+#signup-button {
+    color: white;
+    border: 0;
+    border: solid white;
+    background-color: #3882F6;
+    border-radius: 4px;
+    padding: 5px 20px;
+    width: 100px;
+    height:30px;
+}
+
